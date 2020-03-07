@@ -54,6 +54,10 @@ The wildcard ```*``` can appear multiple times in the same subject. Both types b
 ![](https://blobs.gitbook.com/assets%2F-LqMYcZML1bsXrN3Ezg0%2F-LqMZac7AGFpQY7ewbGi%2F-LqMZgh0PE7kV9Q2l3BV%2Freqrepl.svg?generation=1570206044012948&alt=media)
 
 
+## Queue Groups
+
+https://docs.nats.io/nats-concepts/queue
+
 
 
 
