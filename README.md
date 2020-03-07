@@ -21,14 +21,20 @@ NATS is a pub-sub model. But publishing and consuming messages depends on ``` su
 
 #### Subject Hierarchies
 
-For example, there's an application named CBS. It has hrm, crm microserives. A subject that points to employee resource may be represented as ``` cbs.hrm.emaployee ``` for ```hrm``` microservice and ``` cbs.crm.emaployee ``` for ```crm``` microservice.
+The . character is used to create a subject hierarchy. For example, a world clock application might define the following to logically group related subjects:
+time.us
 
 #### Wildcards
-NATS provides two wildcards that can take the place of one or more elements in a dot-separated subject. Subscribers can use these wildcards to listen to multiple subjects with a single subscription but ``` Publishers will always use a fully specified subject, without the wildcard.```
+
+NATS provides two wildcards that can take the place of one or more elements in a dot-separated subject. Subscribers can use these wildcards to listen to multiple subjects with a single subscription but Publishers will always use a fully specified subject, without the wildcard.
 
 ##### Matching A Single Token
 
-The first wildcard is * which will match a single token. For example if a subscriber want to listen from ``` cbs.hrm.emaployee ```  and  ``` cbs.crm.emaployee ```, it can simply supscribe tp  ``` cbs.*.emaployee ```
+The first wildcard is ```*``` which will match a single token. For example, if an application wanted to listen for eastern time zones, they could subscribe to ``` time.*.east```, which would match ```time.us.east``` and ```time.eu.east```.
+
+##### Matching Multiple Tokens
+
+The second wildcard is ```>``` which will match one or more tokens, and can only appear at the end of the subject. For example, ```time.us.>``` will match ```time.us.east``` and ```time.us.east.atlanta```, while ```time.us.*``` would only match ```time.us.east``` since it can't match more than one token.
 
 
 
