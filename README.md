@@ -21,7 +21,17 @@ NATS is a pub-sub model. But publishing and consuming messages depends on ``` su
 
 #### Subject Hierarchies
 
-For example, there's an application named CBS. It has hrm, crm microserives. A subject that points to employee resource may be represented as ``` cbs.hrm.emaployee ```
+For example, there's an application named CBS. It has hrm, crm microserives. A subject that points to employee resource may be represented as ``` cbs.hrm.emaployee ``` for ```hrm``` microservice and ``` cbs.crm.emaployee ``` for ```crm``` microservice.
+
+#### Wildcards
+NATS provides two wildcards that can take the place of one or more elements in a dot-separated subject. Subscribers can use these wildcards to listen to multiple subjects with a single subscription but ``` Publishers will always use a fully specified subject, without the wildcard.```
+
+##### Matching A Single Token
+
+The first wildcard is * which will match a single token. For example if a subscriber want to listen from ``` cbs.hrm.emaployee ```  and  ``` cbs.crm.emaployee ```, it can simply supscribe tp  ``` cbs.*.emaployee ```
+
+
+
 
 
 
