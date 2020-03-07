@@ -41,6 +41,16 @@ The second wildcard is ```>``` which will match one or more tokens, and can only
 The wildcard ```*``` can appear multiple times in the same subject. Both types be used as well. For example, ```*.*.east.>``` will receive ```time.us.east.atlanta```.
 
 
+## Request-Reply
+
+- A request is sent and the application either waits on the response with a certain timeout or receives a response asynchronously.
+- NATS supports this pattern with its core communication mechanism, publish and subscribe. 
+- A request is published on a given subject with a reply subject, and responders listen on that subject and send responses to the reply subject. 
+- Reply subjects are unique subjects called inbox that are dynamically directed back to the requestor, regardless of location of either party.
+- The power of NATS even allows multiple responses where the first response is utilized and the system efficiently discards the additional ones. This allows for a sophisticated pattern to have multiple responders reduce response latency and jitter.
+
+![](https://blobs.gitbook.com/assets%2F-LqMYcZML1bsXrN3Ezg0%2F-LqMZac7AGFpQY7ewbGi%2F-LqMZgh0PE7kV9Q2l3BV%2Freqrepl.svg?generation=1570206044012948&alt=media)
+
 
 
 
