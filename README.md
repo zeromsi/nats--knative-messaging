@@ -1,4 +1,4 @@
-# nats--knative-messaging
+# nats-knative-messaging
 
 NATS messaging enables the exchange of data that is segmented into messages among computer applications and services. 
 These messages are addressed by ``` subjects ``` and do not depend on network location. This provides an abstraction 
@@ -35,6 +35,10 @@ The first wildcard is ```*``` which will match a single token. For example, if a
 ##### Matching Multiple Tokens
 
 The second wildcard is ```>``` which will match one or more tokens, and can only appear at the end of the subject. For example, ```time.us.>``` will match ```time.us.east``` and ```time.us.east.atlanta```, while ```time.us.*``` would only match ```time.us.east``` since it can't match more than one token.
+
+##### Mix Wildcards
+
+The wildcard ```*``` can appear multiple times in the same subject. Both types be used as well. For example, ```*.*.east.>``` will receive ```time.us.east.atlanta```.
 
 
 
