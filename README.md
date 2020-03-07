@@ -19,4 +19,11 @@ NATS is a pub-sub model. But publishing and consuming messages depends on ``` su
 - For safety across clients, ASCII characters should be used, although this is subject to change in the future.
 
 
+#### Subject Hierarchies
+
+For example, there's an application named CBS. It has hrm, crm microserives. A subject that points to employee resource may be represented as ``` cbs.hrm.emaployee ```
+
+
+
+
 
