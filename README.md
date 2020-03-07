@@ -1,6 +1,6 @@
 # nats-knative-messaging
 
-#NATS Concepts
+## NATS Concepts
 
 NATS messaging enables the exchange of data that is segmented into messages among computer applications and services. 
 These messages are addressed by ``` subjects ``` and do not depend on network location. This provides an abstraction 
@@ -43,7 +43,7 @@ The second wildcard is ```>``` which will match one or more tokens, and can only
 The wildcard ```*``` can appear multiple times in the same subject. Both types be used as well. For example, ```*.*.east.>``` will receive ```time.us.east.atlanta```.
 
 
-## Request-Reply
+### Request-Reply
 
 - A request is sent and the application either waits on the response with a certain timeout or receives a response asynchronously.
 - NATS supports this pattern with its core communication mechanism, publish and subscribe. 
@@ -54,7 +54,7 @@ The wildcard ```*``` can appear multiple times in the same subject. Both types b
 ![](https://blobs.gitbook.com/assets%2F-LqMYcZML1bsXrN3Ezg0%2F-LqMZac7AGFpQY7ewbGi%2F-LqMZgh0PE7kV9Q2l3BV%2Freqrepl.svg?generation=1570206044012948&alt=media)
 
 
-## Queue Groups
+### Queue Groups
 
 https://docs.nats.io/nats-concepts/queue
 
